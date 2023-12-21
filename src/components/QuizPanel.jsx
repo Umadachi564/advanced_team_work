@@ -13,11 +13,11 @@ export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJu
     const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [className, setClassName] = useState("answer");
-    const [nextQuiz] = useSound(nextquiz);
-    const [finalAnswer,{ stop }] = useSound(final_answer)
+    const [nextQuiz] = useSound(nextquiz, { interrupt: true });
+    const [finalAnswer,{ stop }] = useSound(final_answer, { interrupt: true })
     const [correctAnswer] = useSound(correct);
     const [wrongAnswer] = useSound(wrong);
-    const [waitAnswer, WaitAnswerOption] = useSound(wait);
+    const [waitAnswer, WaitAnswerOption] = useSound(wait, { interrupt: true });
 
     useEffect(() => {
         waitAnswer();
@@ -45,16 +45,14 @@ export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJu
             stop();
         if (a.correct) {
             correctAnswer();
-            delay(1000, () => {
-            setQuestionNumber((prev) => prev + 1);
-            setSelectedAnswer(null);
-            });
-            delay(5000, () => {
-                nextQuiz();
-                delay(6000, () => {
-                    waitAnswer();
+                delay(4000, () => {
+                    nextQuiz();
+                    delay(5000, () => {
+                        waitAnswer();
+                        setQuestionNumber((prev) => prev + 1);
+                        setSelectedAnswer(null);
+                    });
                 });
-            });
             // setTimeout(() => {
             //   setQuestionNumber((prev) => prev + 1);
             //   setSelectedAnswer(null);
