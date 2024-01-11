@@ -1,11 +1,39 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { QuizPanel } from "./components/QuizPanel";
+import GroupsIcon  from '@mui/icons-material/Groups';
+import CallIcon  from '@mui/icons-material/Call';
+import { Button, IconButton, Stack } from "@mui/material";
+import { PopUpScreen } from "./components/PopUpScreen";
 
 function App() {
   const [finishJudge, setFinishJudge] = useState(false);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [earned, setEarned] = useState("0円");
+  const [audienceOpen, setAudienceOpen] = useState(false);
+  const [telephoneOpen, setTelephoneOpen] = useState(false);
+
+  const handleClickAudienceOpen = () => {
+    setAudienceOpen(true);
+  };
+
+  const handleAudienceClose = () => {
+    setAudienceOpen(false);
+  };
+
+  const handleClickTelephoneOpen = () => {
+    setTelephoneOpen(true);
+  }
+
+  const handleTelephoneClose = () => {
+    setTelephoneOpen(false);
+  }
+
+  const onClickRestart = () => {
+    setQuestionNumber(1);
+    setFinishJudge(false);
+    setEarned("0円");
+  }
 
   // 問題と解答のデータ
   const data = [
@@ -108,9 +136,29 @@ function App() {
       {/* クイズ本体のUI */}
       <div className="main">
         {finishJudge ? (
-          <h1 className="endText">獲得賞金: {earned}</h1>
+          // 終了画面
+          <div className="endText">
+            <h1>獲得賞金: {earned}</h1>
+            <Button variant="contained" aria-label="Reset" onClick={onClickRestart}>最初からやり直す</Button>
+          </div>
         ) : (
           <>
+            {/* オプションのボタン群 */}
+            <Stack direction="row" spacing={2} className="ButtonsBack">
+              <Button variant="contained" aria-label="50_50">50:50</Button>
+              <IconButton color="primary" aria-label="audience" onClick={handleClickAudienceOpen}>
+                <GroupsIcon />
+              </IconButton>
+              <IconButton color="primary" aria-label="telephone" onClick={handleClickTelephoneOpen}>
+                <CallIcon />
+              </IconButton>
+            </Stack>
+
+            {/* ボタンを押したときに表示されるポップアップ画面 デザインは最低限 */}
+            <PopUpScreen open={audienceOpen} handleClose={handleAudienceClose} text="Audience"/>
+            <PopUpScreen open={telephoneOpen} handleClose={handleTelephoneClose} text="Telephone"/>
+
+            {/* 問題と解答のパネル */}
             <div className="bottom">
               <QuizPanel
                 data={data}
