@@ -350,10 +350,370 @@
             },
             {
                 "text": "森川 晃卿",
-                "correct": true
+                "correct": false
             },
             {
                 "text": "児玉 隆夫",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 11001,
+        "level": 1,
+        "question": "中百舌鳥キャンパスに置かれていた大阪公立大学の1つ前の大学は？",
+        "answers": [
+            {
+                "text": "大阪府立大学",
+                "correct": true
+            },
+            {
+                "text": "大阪大学",
+                "correct": false
+            },
+            {
+                "text": "大阪市立大学",
+                "correct": false
+            },
+            {
+                "text": "浪速大学",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 11002,
+        "level": 1,
+        "question": "大阪府の木であり、大阪府立大学・大阪公立大学のロゴモチーフにもなっている木の名前は？",
+        "answers": [
+            {
+                "text": "杉",
+                "correct": false
+            },
+            {
+                "text": "イチョウ",
+                "correct": true
+            },
+            {
+                "text": "桜",
+                "correct": false
+            },
+            {
+                "text": "カエデ",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 11003,
+        "level": 1,
+        "question": "中百舌鳥キャンパスで春に行われる学園祭の名前は？",
+        "answers": [
+            {
+                "text": "なかよし祭",
+                "correct": false
+            },
+            {
+                "text": "ズッ友フォーエバーFES",
+                "correct": false
+            },
+            {
+                "text": "友好祭",
+                "correct": true
+            },
+            {
+                "text": "親睦祭り",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 11004,
+        "level": 1,
+        "question": "中百舌鳥キャンパスで秋に行われる学園祭の名前は？",
+        "answers": [
+            {
+                "text": "中百舌鳥祭",
+                "correct": false
+            },
+            {
+                "text": "霜月祭",
+                "correct": false
+            },
+            {
+                "text": "白鷺祭",
+                "correct": true
+            },
+            {
+                "text": "銀杏祭",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 11005,
+        "level": 1,
+        "question": "中百舌鳥キャンパスから最も近い駅は？",
+        "answers": [
+            {
+                "text": "南海高野線中百舌鳥駅",
+                "correct": false
+            },
+            {
+                "text": "Osaka Metro御堂筋線なかもず駅",
+                "correct": false
+            },
+            {
+                "text": "JR阪和線三国ヶ丘駅",
+                "correct": false
+            },
+            {
+                "text": "南海高野線白鷺駅",
+                "correct": true
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 21001,
+        "level": 2,
+        "question": "中百舌鳥キャンパスにあるこの像の名前は？",
+        "answers": [
+            {
+                "text": "モズ",
+                "correct": false
+            },
+            {
+                "text": "総合知",
+                "correct": false
+            },
+            {
+                "text": "サクセス",
+                "correct": false
+            },
+            {
+                "text": "プロセス",
+                "correct": true
+            }
+        ],
+        "img_path": "./assets/problems/images/statue.png"
+    },
+    {
+        "id": 21002,
+        "level": 2,
+        "question": "中百舌鳥キャンパスにある第2学生会館の通称は？",
+        "answers": [
+            {
+                "text": "ふれあい会館",
+                "correct": false
+            },
+            {
+                "text": "シュライク",
+                "correct": true
+            },
+            {
+                "text": "ハム・ホール",
+                "correct": false
+            },
+            {
+                "text": "OPU HALL",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 21003,
+        "level": 2,
+        "question": "中百舌鳥キャンパス学術情報センター大ホールの名称は？",
+        "answers": [
+            {
+                "text": "Uホール白鷺",
+                "correct": true
+            },
+            {
+                "text": "Uホール中百舌鳥",
+                "correct": false
+            },
+            {
+                "text": "OMUホール白鷺",
+                "correct": false
+            },
+            {
+                "text": "OPUホール白鷺",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 21004,
+        "level": 2,
+        "question": "次の施設のうち中百舌鳥キャンパスにあるものは？",
+        "answers": [
+            {
+                "text": "レストラン",
+                "correct": false
+            },
+            {
+                "text": "釣り堀",
+                "correct": false
+            },
+            {
+                "text": "コンビニ",
+                "correct": false
+            },
+            {
+                "text": "理容室",
+                "correct": true
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 21005,
+        "level": 2,
+        "question": "中百舌鳥キャンパスの前身である大阪府立大学出身の小説家は？",
+        "answers": [
+            {
+                "text": "湊かなえ",
+                "correct": false
+            },
+            {
+                "text": "司馬遼太郎",
+                "correct": false
+            },
+            {
+                "text": "東野圭吾",
+                "correct": true
+            },
+            {
+                "text": "池井戸潤",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 31001,
+        "level": 3,
+        "question": "中百舌鳥キャンパスの池で近年発見された新種の生物は？",
+        "answers": [
+            {
+                "text": "ハチ",
+                "correct": true
+            },
+            {
+                "text": "サギ",
+                "correct": false
+            },
+            {
+                "text": "トンボ",
+                "correct": false
+            },
+            {
+                "text": "ハエ",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 31002,
+        "level": 3,
+        "question": "中百舌鳥キャンパス中央の広場「くすのき広場〇〇」。〇〇に入るのは？",
+        "answers": [
+            {
+                "text": "NEXT",
+                "correct": false
+            },
+            {
+                "text": "NExST",
+                "correct": true
+            },
+            {
+                "text": "neXst",
+                "correct": false
+            },
+            {
+                "text": "next",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 31003,
+        "level": 3,
+        "question": "現在、中百舌鳥キャンパスから杉本キャンパスに移転予定の学部・学域は？",
+        "answers": [
+            {
+                "text": "理学部",
+                "correct": true
+            },
+            {
+                "text": "工学部",
+                "correct": false
+            },
+            {
+                "text": "農学部",
+                "correct": false
+            },
+            {
+                "text": "現代システム科学域",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 31004,
+        "level": 3,
+        "question": "中百舌鳥キャンパスで次のうち、2024年1月現在存在しない棟は？",
+        "answers": [
+            {
+                "text": "A5棟",
+                "correct": false
+            },
+            {
+                "text": "A4棟",
+                "correct": false
+            },
+            {
+                "text": "A3棟",
+                "correct": false
+            },
+            {
+                "text": "A2棟",
+                "correct": true
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 31005,
+        "level": 3,
+        "question": "中百舌鳥キャンパスがロケ地として使われた朝ドラは？",
+        "answers": [
+            {
+                "text": "ブギウギ",
+                "correct": false
+            },
+            {
+                "text": "舞い上がれ！",
+                "correct": true
+            },
+            {
+                "text": "カムカムエヴリバディ",
+                "correct": false
+            },
+            {
+                "text": "おちょやん",
                 "correct": false
             }
         ],
