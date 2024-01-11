@@ -12,6 +12,7 @@
   background-size: cover; 
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .pyramid {
@@ -51,14 +52,9 @@
   font-weight: 500;
 }
 
-/* 50:50とかドロップアウトオプションUIを追加するなら使う */
-.top {
-  height: 50%;
-  position: relative;
-}
-
 .bottom {
   height: 50%;
+  margin-top: 50px;
 }
 
 .trivia {
@@ -147,11 +143,10 @@
 }
 
 .endText {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
 }
 
@@ -168,4 +163,13 @@
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.ButtonsBack{
+  background: whitesmoke;
+  width: 20%;
+  padding: 5px 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
