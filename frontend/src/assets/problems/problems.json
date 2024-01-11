@@ -1,0 +1,362 @@
+[
+    {
+        "id": 12001,
+        "level": 1,
+        "question": "大阪市立大学杉本キャンパスのシンボルとして長年愛され、2017年に安全のため伐採されてしまった植物は？",
+        "answers": [
+            {
+                "text": "杉",
+                "correct": false
+            },
+            {
+                "text": "ヤシ",
+                "correct": true
+            },
+            {
+                "text": "メタセコイア",
+                "correct": false
+            },
+            {
+                "text": "桜",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 12002,
+        "level": 1,
+        "question": "杉本キャンパスの近くを流れる一級河川の名前は？",
+        "answers": [
+            {
+                "text": "淀川",
+                "correct": false
+            },
+            {
+                "text": "大和川",
+                "correct": false
+            },
+            {
+                "text": "大川",
+                "correct": true
+            },
+            {
+                "text": "天王寺川",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 12003,
+        "level": 1,
+        "question": "杉本キャンパスの最寄りである杉本町駅を走っているのはJRのどの線？",
+        "answers": [
+            {
+                "text": "大阪環状線",
+                "correct": false
+            },
+            {
+                "text": "阪和線",
+                "correct": true
+            },
+            {
+                "text": "大和川線",
+                "correct": false
+            },
+            {
+                "text": "御堂筋線",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 12004,
+        "level": 1,
+        "question": "杉本キャンパスで秋に開催される大学祭の名前は？",
+        "answers": [
+            {
+                "text": "白鷺祭",
+                "correct": false
+            },
+            {
+                "text": "満月祭",
+                "correct": false
+            },
+            {
+                "text": "杉本祭",
+                "correct": false
+            },
+            {
+                "text": "銀杏祭",
+                "correct": true
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 12005,
+        "level": 1,
+        "question": "杉本キャンパスで春に開催される大学祭の名前は？",
+        "answers": [
+            {
+                "text": "つくし祭",
+                "correct": false
+            },
+            {
+                "text": "ふたば祭",
+                "correct": true
+            },
+            {
+                "text": "ココナッツフェスティバル",
+                "correct": false
+            },
+            {
+                "text": "桜まつり",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 22001,
+        "level": 2,
+        "question": "大阪公立大学(杉本キャンパス)の起源である大阪商業講習所の創立に携わった人物は？",
+        "answers": [
+            {
+                "text": "五代友厚",
+                "correct": true
+            },
+            {
+                "text": "初代友厚",
+                "correct": false
+            },
+            {
+                "text": "古代友厚",
+                "correct": false
+            },
+            {
+                "text": "末代友厚",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 22002,
+        "level": 2,
+        "question": "杉本キャンパスに現在存在しない学部は？",
+        "answers": [
+            {
+                "text": "経営学部",
+                "correct": true
+            },
+            {
+                "text": "工学部",
+                "correct": false
+            },
+            {
+                "text": "法学部",
+                "correct": false
+            },
+            {
+                "text": "理学部",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 22003,
+        "level": 2,
+        "question": "杉本キャンパスに存在しない建物は？",
+        "answers": [
+            {
+                "text": "田中記念館",
+                "correct": false
+            },
+            {
+                "text": "人工光合成研究センター",
+                "correct": false
+            },
+            {
+                "text": "高原記念館",
+                "correct": false
+            },
+            {
+                "text": "人工生命研究センター",
+                "correct": true
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 22004,
+        "level": 2,
+        "question": "2007年に閉店した喫茶店「夏爐」の名物であり、現在杉本キャンパス内の食堂「めたせこいあ」で提供されている料理は？",
+        "answers": [
+            {
+                "text": "ペッパーライス",
+                "correct": false
+            },
+            {
+                "text": "単位ライス",
+                "correct": false
+            },
+            {
+                "text": "レモンライス",
+                "correct": true
+            },
+            {
+                "text": "マヨライス",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 22005,
+        "level": 2,
+        "question": "杉本キャンパスにある学術情報総合センターの最上階(屋上を除く)は何階？",
+        "answers": [
+            {
+                "text": "8階",
+                "correct": false
+            },
+            {
+                "text": "9階",
+                "correct": false
+            },
+            {
+                "text": "10階",
+                "correct": true
+            },
+            {
+                "text": "11階",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 32001,
+        "level": 3,
+        "question": "旧制大阪商科大学予科の逍遙歌の曲名でもあり、杉本キャンパス内の石碑に刻まれている言葉は？",
+        "answers": [
+            {
+                "text": "駑馬十駕",
+                "correct": false
+            },
+            {
+                "text": "猛虎伏草",
+                "correct": false
+            },
+            {
+                "text": "桜花爛漫",
+                "correct": true
+            },
+            {
+                "text": "勇往邁進",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 32002,
+        "level": 3,
+        "question": "杉本キャンパスの本館(一号館)の緯度経度としてもっとも近いものは？(ヒント：歴史を刻めなかもず店はおよそ(34.550, 135.506)",
+        "answers": [
+            {
+                "text": "(34.591, 135.505)",
+                "correct": true
+            },
+            {
+                "text": "(34.593, 135.508)",
+                "correct": false
+            },
+            {
+                "text": "(34.612, 135.520)",
+                "correct": false
+            },
+            {
+                "text": "(34.591, 135.543)",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 32003,
+        "level": 3,
+        "question": "杉本キャンパス付近を散歩していたら美味しそうな匂いのするお店を見つけた。ここはどこだろう？",
+        "answers": [
+            {
+                "text": "小楽亭",
+                "correct": true
+            },
+            {
+                "text": "タコシュー",
+                "correct": false
+            },
+            {
+                "text": "田jyu",
+                "correct": false
+            },
+            {
+                "text": "ラソイ",
+                "correct": false
+            }
+        ],
+        "img_path": "./assets/problems/images/what_is.png"
+    },
+    {
+        "id": 32004,
+        "level": 3,
+        "question": "杉本キャンパスのマスコットキャラクター「カメイチ」の年齢は？",
+        "answers": [
+            {
+                "text": "5歳",
+                "correct": false
+            },
+            {
+                "text": "70歳",
+                "correct": false
+            },
+            {
+                "text": "100歳",
+                "correct": false
+            },
+            {
+                "text": "140歳",
+                "correct": true
+            }
+        ],
+        "img_path": ""
+    },
+    {
+        "id": 32005,
+        "level": 3,
+        "question": "大阪市立大学の初代学長の名前は？",
+        "answers": [
+            {
+                "text": "恒藤 恭",
+                "correct": true
+            },
+            {
+                "text": "福井 孝治",
+                "correct": false
+            },
+            {
+                "text": "森川 晃卿",
+                "correct": false
+            },
+            {
+                "text": "児玉 隆夫",
+                "correct": false
+            }
+        ],
+        "img_path": ""
+    }
+]
