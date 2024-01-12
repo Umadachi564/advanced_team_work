@@ -7,6 +7,12 @@ https://youtu.be/EPh_VbMxu4E?si=9CuWLLEMnhnsziqB
 
 ## 事前準備
 Node.jsのインストールが必要 → DockerのベースイメージをNode.jsの最新版にすればいい？
+
+## 問題の登録方法
+`problems.json`に直接書いてください。フォーマットはissue#7参照。  
+実際にはDBを立ててそちらに登録する必要がありますが、これは`python3 scripts/problem_register.py`(仮)をサーバ上で実行すれば良いです。  
+問題をDBに登録する前に、`python3 scripts/check_problems.py`を実行してください。JSONファイルに登録されている情報がフォーマットを満たしているのかを自動でチェックしてくれます。(TODO : problem_register.pyから自動でチェックするようにする。あるいは2つを連続で走らせるシェルスクリプトを書く)
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

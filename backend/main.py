@@ -2,7 +2,8 @@ from fastapi import FastAPI, HTTPException
 from typing import List
 from starlette.middleware.cors import CORSMiddleware
 from db import session
-from model import QuizTable
+from model import Questions,Answers
+from sqlalchemy.orm import relationship
 import random
 
 app = FastAPI()
@@ -21,14 +22,14 @@ app.add_middleware(
 # テーブルにいる全クイズ情報を取得 GET
 @app.get("/quizzes")
 def read_quizzes():
-    quizzes = session.query(QuizTable).all()
+    quizzes = session.query(Questions).all()
     return quizzes
 
 
 # idにマッチするクイズ情報を取得 GET
 @app.get("/quizzes/{quiz_id}")
 def read_quiz(quiz_id: int):
-    quiz = session.query(QuizTable).filter(QuizTable.id == quiz_id).first()
+    quiz = session.query(Questions).filter(Questions.id == quiz_id).first()
     if quiz is None:
         raise HTTPException(status_code=404, detail="Quiz not found")
     return quiz
@@ -36,7 +37,7 @@ def read_quiz(quiz_id: int):
 
 @app.get("/fifty/{quiz_id}")
 def fifty_fifty(quiz_id: int):
-    quiz = session.query(QuizTable).filter(QuizTable.id == quiz_id).first()
+    quiz = session.query(Questions).filter(Questions.id == quiz_id).first()
     if quiz is None:
         raise HTTPException(status_code=404, detail="Quiz not found")
     correct_number = 0
