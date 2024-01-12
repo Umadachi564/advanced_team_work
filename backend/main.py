@@ -47,8 +47,6 @@ def fifty_fifty(quiz_id: int):
             correct_number = index
         else:
             f_list.append(answer)
-    print(correct_number)
-    print(quiz.answers)
     r = random.randint(0, 2)
     select = [f_list[r], quiz.answers[correct_number]]
 

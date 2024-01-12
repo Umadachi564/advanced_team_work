@@ -5,7 +5,9 @@
 /backend/__pycache__
 /.pnp
 .pnp.js
-
+/backend/__pycache__/db.cpython-37.pyc
+/backend/__pycache__/main.cpython-37.pyc
+/backend/__pycache__/model.cpython-37.pyc
 # testing
 /coverage
 
