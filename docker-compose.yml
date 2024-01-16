@@ -42,7 +42,7 @@ services:
     container_name: "front"
     volumes:
       - ./frontend:/usr/src/app
-    command: sh -c "npm install react-scripts --save && npm install react && npm install @mui/icons-material @mui/material @emotion/styled @emotion/react && npm start"
+    command: sh -c "npm install react-scripts --save && npm install react && npm install @mui/icons-material @mui/material @emotion/styled @emotion/react @mui/x-charts && npm install axios && npm start"
     ports:
       - "3000:3000"
     links:

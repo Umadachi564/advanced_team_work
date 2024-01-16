@@ -3,13 +3,12 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
+import { BarChart } from '@mui/x-charts/BarChart';
 
-// テレフォンのボタンを押すと表示されるポップアップ画面
+// オーディエンスのボタンを押すと表示されるポップアップ画面
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -19,7 +18,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export const PopUpScreen = ({open, handleClose, text}) => {
+export const PopUpScreenAudience = ({open, handleClose, text}) => {
     const dialogTitle = text;
     return (
         <>
@@ -42,18 +41,19 @@ export const PopUpScreen = ({open, handleClose, text}) => {
                 >
                     <CloseIcon />
                 </IconButton>
-                <DialogContent dividers>
-                <Typography gutterBottom>
-                    テスト1
-                </Typography>
-                <Typography gutterBottom>
-                    大阪公立大学は、大阪市立大学、大阪府立大学が統合して2022年4月に新たに誕生した公立総合大学です。
-                </Typography>
-                <Typography gutterBottom>
-                    開学にあたってのキャッチフレーズを「総合知で、超えていく大学。」としています。予測不能な社会を生きる私たちに求められるものの一つが「総合知」です。
-                    複雑な社会課題を解決に導くには、個々の「専門知」を深め、しっかりと土台を築き上げ、他領域を融合し、「総合知」で挑むことが重要と考えています。
-                </Typography>
-                </DialogContent>
+                <BarChart
+                    dataset={[
+                        { data: 35, label: 'A' },
+                        { data: 25, label: 'B' },
+                        { data: 15, label: 'C' },
+                        { data: 10, label: 'D' },
+                    ]}
+                    height={290}
+                    width={400}
+                    series={[{ dataKey: 'data'}]}
+                    xAxis={[{ dataKey: 'label' , scaleType: 'band' }]}
+                    margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+                />
                 <DialogActions>
                 <Button autoFocus onClick={handleClose}>
                     閉じる
