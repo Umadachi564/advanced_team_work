@@ -10,8 +10,16 @@ Node.jsのインストールが必要 → DockerのベースイメージをNode.
 
 ## 問題の登録方法
 `problems.json`に直接書いてください。フォーマットはissue#7参照。  
-実際にはDBを立ててそちらに登録する必要がありますが、これは`python3 scripts/problem_register.py`(仮)をサーバ上で実行すれば良いです。  
-問題をDBに登録する前に、`python3 scripts/check_problems.py`を実行してください。JSONファイルに登録されている情報がフォーマットを満たしているのかを自動でチェックしてくれます。(TODO : problem_register.pyから自動でチェックするようにする。あるいは2つを連続で走らせるシェルスクリプトを書く)
+問題の更新を行う場合、すべてのコンテナが立ち上がってからadvanced_team_workのディレクトリで、以下のコマンドを入力してください。
+`chmod +x run_insert_data.sh`
+`./run_insert_data.sh`
+これで問題が更新されるはずです。また、クイズのidは他のものと被らないように注意してください。被るとデータベースに挿入できません。
+
+
+
+
+<!-- 実際にはDBを立ててそちらに登録する必要がありますが、これは`python3 scripts/problem_register.py`(仮)をサーバ上で実行すれば良いです。  
+問題をDBに登録する前に、`python3 scripts/check_problems.py`を実行してください。JSONファイルに登録されている情報がフォーマットを満たしているのかを自動でチェックしてくれます。(TODO : problem_register.pyから自動でチェックするようにする。あるいは2つを連続で走らせるシェルスクリプトを書く) -->
 
 <!-- # Getting Started with Create React App
 

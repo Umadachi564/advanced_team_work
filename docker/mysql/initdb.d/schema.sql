@@ -8,7 +8,7 @@ CREATE TABLE questions (
 );
 
 CREATE TABLE answers (
-    id INT,
+    id INT AUTO_INCREMENT,
     question_id INT,
     quiz_text TEXT,
     correct BOOLEAN,
