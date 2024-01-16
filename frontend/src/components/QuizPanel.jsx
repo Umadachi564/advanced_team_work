@@ -9,7 +9,7 @@ import wait from "../assets/sounds/answer_wait.mp3";
 // クイズの判定処理や、次の問題への遷移処理を行うコンポーネント
 // 新規性: 音を鳴らす処理を追加
 
-export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJudge}) => {
+export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJudge, fiftyData, fiftyflag}) => {
     const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [className, setClassName] = useState("answer");
@@ -49,6 +49,10 @@ export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJu
                     nextQuiz();
                     delay(5000, () => {
                         waitAnswer();
+                        // もしfiftyflagがtrueなら, fiftyDataを空にする
+                        if (fiftyflag) {
+                            fiftyData.splice(0, fiftyData.length);
+                        }
                         setQuestionNumber((prev) => prev + 1);
                         setSelectedAnswer(null);
                     });
@@ -67,17 +71,30 @@ export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJu
     };
     return (
         <div className="trivia">
-        <div className="question">{question?.question}</div>
-        <div className="answers">
-            {question?.answers.map((a) => (
-            <div
-                className={selectedAnswer === a ? className : "answer"}
-                onClick={() => !selectedAnswer && handleClick(a)}
-            >
-                {a.text}
+            <div className="question">
+                {question?.question}
             </div>
-            ))}
-        </div>
+            {/* question.img_pathが空文字列でなければ画像を表示 空文字なら何も表示しない*/}
+            {question?.img_path && (
+                <div className="question-img">
+                    <img src={question?.img_path} alt="quiz-img" />
+                </div>
+            )}
+            <div className="answers">
+                {question?.answers.map((a) => {
+                    if (fiftyData.length > 0 && !fiftyData.some(fd => fd.quiz_text === a.quiz_text)) {
+                        return null;
+                    }
+                    return (
+                        <div
+                            className={selectedAnswer === a ? className : "answer"}
+                            onClick={() => !selectedAnswer && handleClick(a)}
+                        >
+                            {a.quiz_text}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }
