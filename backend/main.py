@@ -60,12 +60,13 @@ def fifty_fifty(quiz_id: int):
     return select
 
 
-@app.get("/quizzes/fromlevel/{level}", response_model=schemas.Questions)
+@app.get("/quizzes/fromlevel/{level}", response_model=List[schemas.Questions])
 def get_question(level: int):
+    quiz_num = 5
     quiz = session.query(Questions).options(joinedload(Questions.answers)).filter(Questions.quiz_level == level).all()
-    if len(quiz) == 0:
+    if len(quiz) < quiz_num:
         raise HTTPException(status_code=404, detail="Quiz not found")
-    return random.choice(quiz)
+    return random.sample(quiz, quiz_num)
 
 # 問題のPOST
 #@app.post("/add/")
