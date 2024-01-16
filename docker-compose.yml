@@ -1,0 +1,55 @@
+version: "3.3"
+
+services:
+  # MySQL
+  db:
+    container_name: "db"
+    build: ./docker/mysql
+    restart: always
+    tty: true
+    environment:
+      MYSQL_DATABASE: sample_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql:/var/log/mysql
+    networks:
+      - local-net
+
+  # FastAPI
+  api:
+    depends_on:
+      - db
+    links:
+      - db
+    container_name: "api"
+    build: ./docker/api
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend:/usr/src/server
+    networks:
+      - local-net
+
+  fd:
+    build: ./docker/front
+    container_name: "front"
+    volumes:
+      - ./frontend:/usr/src/app
+    command: sh -c "npm install react-scripts --save && npm install react && npm install @mui/icons-material @mui/material @emotion/styled @emotion/react && npm start"
+    ports:
+      - "3000:3000"
+    links:
+      - api
+    networks:
+      - local-net
+
+# ネットワーク定義
+networks:
+  local-net:
+    driver: bridge
