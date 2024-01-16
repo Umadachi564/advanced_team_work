@@ -53,6 +53,10 @@ export const QuizPanel = ({ data, questionNumber, setQuestionNumber, setFinishJu
                         if (fiftyflag) {
                             fiftyData.splice(0, fiftyData.length);
                         }
+                        // questionNumberが15なら終了
+                        if (questionNumber === 15) {
+                            setFinishJudge(true);
+                        }
                         setQuestionNumber((prev) => prev + 1);
                         setSelectedAnswer(null);
                     });
