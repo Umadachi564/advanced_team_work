@@ -34,6 +34,7 @@ services:
       - "8001:8001"
     volumes:
       - ./backend:/usr/src/server
+    env_file: .env
     networks:
       - local-net
 
