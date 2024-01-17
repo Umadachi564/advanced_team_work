@@ -10,10 +10,16 @@ Node.jsのインストールが必要 → DockerのベースイメージをNode.
 
 ## 問題の登録方法
 `problems.json`に直接書いてください。フォーマットはissue#7参照。  
-問題の更新を行う場合、すべてのコンテナが立ち上がってからadvanced_team_workのディレクトリで、以下のコマンドを入力してください。
+#シェルスクリプトを用いて問題の更新を行う場合、
+すべてのコンテナが立ち上がってからadvanced_team_workのディレクトリで、以下のコマンドを入力してください。
 `chmod +x run_insert_data.sh`
 `./run_insert_data.sh`
 これで問題が更新されるはずです。また、クイズのidは他のものと被らないように注意してください。被るとデータベースに挿入できません。
+
+#シェルスクリプトを使わずに問題の更新を行う場合
+すべてのコンテナを立ち上げた後、以下のコマンドを実行してください
+`docker exec -it api sh -c "python /usr/src/server/insert_data.py"`
+`docker restart api`
 
 
 
