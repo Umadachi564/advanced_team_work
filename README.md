@@ -1,12 +1,14 @@
-## 参考にしたYouTubeの動画
-https://youtu.be/EPh_VbMxu4E?si=9CuWLLEMnhnsziqB
-
 ## アプリの概要
-- ミリオネア風のクイズアプリ. 時間の都合上, フロントエンドだけで完結するような実装になっている
+- ミリオネア風のクイズアプリ. 
 - クイズ内容: 大阪公立大学や情報学に関わる研究クイズ
 
+## 工夫した点
+1. 本家により近づけるために, 音を追加したり50:50, オーディエンス, テレフォン(簡易版)機能(以下, オプション機能)とUIを追加した
+2. フロントエンドだけで完結したものにすると, JavaScript(React)のコードが冗長になり保守が困難であるため, フロントエンドとバックエンドに分割
+3. バックエンド側でAPIを実装し, フロントエンドはAPIを使うだけでクイズデータを取得できたり, オプション機能を利用できるようにした. 
+
 ## 事前準備
-Node.jsのインストールが必要 → DockerのベースイメージをNode.jsの最新版にすればいい？
+- Dockerの環境構築を行ってください
 
 ## 問題の登録方法
 `problems.json`に直接書いてください。フォーマットはissue#7参照。  
@@ -21,8 +23,13 @@ Node.jsのインストールが必要 → DockerのベースイメージをNode.
 `docker exec -it api sh -c "python /usr/src/server/insert_data.py"`
 `docker restart api`
 
+## 利用方法
+1. このリポジトリをcloneしてくる
+2. `docker-compose up `
+3. 数分待つと, `localhost:3000`という表示が出てくるので, それを押すと遊べます. 
 
-
+<!-- ## 参考にしたYouTubeの動画
+https://youtu.be/EPh_VbMxu4E?si=9CuWLLEMnhnsziqB -->
 
 <!-- 実際にはDBを立ててそちらに登録する必要がありますが、これは`python3 scripts/problem_register.py`(仮)をサーバ上で実行すれば良いです。  
 問題をDBに登録する前に、`python3 scripts/check_problems.py`を実行してください。JSONファイルに登録されている情報がフォーマットを満たしているのかを自動でチェックしてくれます。(TODO : problem_register.pyから自動でチェックするようにする。あるいは2つを連続で走らせるシェルスクリプトを書く) -->
