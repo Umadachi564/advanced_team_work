@@ -63,13 +63,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-right: 30px;
 }
 
 .question {
   width: 80%;
   background: linear-gradient(#100241, black);
   text-align: center;
-  padding: 20px;
   border-radius: 10px;
   border: 2px solid white;
   font-size: 20px;
@@ -167,9 +167,15 @@
 
 .ButtonsBack{
   background: whitesmoke;
-  width: 20%;
+  height: 30%;
   padding: 5px 5px;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.question-img img{
+  display: block;
+  margin: 5px auto;
+  width: 23%;
 }

@@ -74,34 +74,18 @@ function App() {
   
   const fetchData = async () => {
     try {
-      const url = "http://127.0.0.1:8001/quizzes";
-      const response = await axios.get(url);
-      const data = response.data;
-
-      // quiz_levelごとにデータを分割
-      const level1 = data.filter(quiz => quiz.quiz_level === 1);
-      const level2 = data.filter(quiz => quiz.quiz_level === 2);
-      const level3 = data.filter(quiz => quiz.quiz_level === 3);
-
-      // 各レベルからランダムに5問ずつ抽出
-      const selectedData = [...selectRandom(level1, 5), ...selectRandom(level2, 5), ...selectRandom(level3, 5)];
-  
+      const urls = [
+        'http://127.0.0.1:8001/quizzes/fromlevel/1',
+        'http://127.0.0.1:8001/quizzes/fromlevel/2',
+        'http://127.0.0.1:8001/quizzes/fromlevel/3'
+      ];
+      // 3つのAPIにリクエストしてデータを取得し, それらを結合してselectedDataに格納
+      const [level1, level2, level3] = await Promise.all(urls.map(url => axios.get(url)));
+      const selectedData = [...level1.data, ...level2.data, ...level3.data]
       return selectedData;
     } catch (error) {
       console.error('Error:', error);
     }
-  }
-
-  // 配列からランダムに指定した数の要素を抽出する関数
-
-  const selectRandom = (array, num) => {
-    const selected = [];
-    for (let i = 0; i < num; i++) {
-      const randomIndex = Math.floor(Math.random() * array.length);
-      selected.push(array[randomIndex]);
-      array.splice(randomIndex, 1); // 選択した問題を元のデータから削除
-    }
-    return selected;
   }
 
   useEffect(() => {
@@ -219,7 +203,7 @@ function App() {
         ) : (
           <>
             {/* オプションのボタン群 */}
-            <Stack direction="row" spacing={2} className="ButtonsBack">
+            <Stack direction="column" spacing={2} className="ButtonsBack">
               <Button variant="contained" aria-label="50_50" onClick={handleClickFifty} disabled={fiftyflag}>50:50</Button>
               <IconButton color="primary" aria-label="audience" onClick={handleClickAudienceOpen} disabled={audienceflag}>
                 <GroupsIcon />
