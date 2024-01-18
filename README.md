@@ -1,5 +1,5 @@
 ## アプリの概要
-- ミリオネア風のクイズアプリ. 
+- ミリオネア風のクイズアプリ
 - クイズ内容: 大阪公立大学に関わるクイズ
 
 ## 工夫した点
@@ -8,7 +8,10 @@
 3. バックエンド側でAPIを実装し, フロントエンドはAPIを使うだけでクイズデータを取得できたり, オプション機能を利用できるようにした. 
 
 ## 事前準備
-- Dockerの環境構築を行ってください
+1. Dockerの環境構築を行ってください
+2. Open AI API(https://platform.openai.com/docs/overview)のAPI keysでAPI Keyを作成してください. (会員登録必須)
+3. 一番上の階層(docker-compose.yamlがある階層)に.envファイルを追加してください
+4. 3で作った.envファイルに API_KEY = "your Open AI API Key" (2で作ったOPen AI API key)という文言を追加してください
 
 ## 問題の登録方法
 `problems.json`に直接書いてください。フォーマットはissue#7参照。  
