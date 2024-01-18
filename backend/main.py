@@ -7,6 +7,8 @@ from sqlalchemy.orm import joinedload
 import schemas
 from typing import List
 import random
+import os
+from openai import OpenAI
 
 app = FastAPI()
 
@@ -68,6 +70,31 @@ def get_question(level: int):
         raise HTTPException(status_code=404, detail="Quiz not found")
     return random.sample(quiz, quiz_num)
 
+@app.get("/telephone")
+def get_telephone_text(question_text: str, select_A: str, select_B: str, select_C: str, select_D: str):
+    question_text = "問題です。" + question_text + "の答えはどれでしょうか？"
+    # select_text = "選択肢は、" + select_A + "、" + select_B + "、" + select_C + "、" + select_D + "です。"
+    select_text = "選択肢は、" +"A: "+ select_A + "、" +"B: "+ select_B + "、" + "C: "+select_C + "、" + "D: "+select_D + "です。"
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=os.environ.get("API_KEY"),
+    )
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "あなたはクイズ・ミリオネアの挑戦者から「テレフォン」で質問を受けている挑戦者の友人です。次の質問に陽気な口調で回答してください。ただし、知識レベルは大阪の一般的な大学生のものとします。",
+            },
+            {
+                "role": "user",
+                "content": question_text + select_text,
+            }
+        ],
+        model="gpt-3.5-turbo",
+    )
+    # AIからの応答をレスポンスとして返す
+    return chat_completion.choices[0].message.content
 # 問題のPOST
 #@app.post("/add/")
 #def create_question(addQuest: schemas.Questions):

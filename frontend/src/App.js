@@ -19,6 +19,8 @@ function App() {
   const [fiftyflag, setFiftyflag] = useState(false);
   const [telephoneflag, setTelephoneflag] = useState(false);
   const [audienceflag, setAudienceflag] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [telephoneData, setTelephoneData] = useState("");
 
   const handleClickAudienceOpen = () => {
     setAudienceOpen(true);
@@ -31,7 +33,27 @@ function App() {
   };
 
   const handleClickTelephoneOpen = () => {
+    setLoading(true);
     setTelephoneOpen(true);
+    const url = "http://127.0.0.1:8001/telephone"
+    const currentQuestiontext = quizData[questionNumber - 1].question;
+    const currentAnswers = quizData[questionNumber - 1].answers;
+    const select_A = currentAnswers[0].quiz_text;
+    const select_B = currentAnswers[1].quiz_text;
+    const select_C = currentAnswers[2].quiz_text;
+    const select_D = currentAnswers[3].quiz_text;
+    
+    // APIにリクエストする際にcurrentQuestiontext, select_A, select_B, select_C, select_Dを渡す
+    const newUrl = url + "?question_text=" + currentQuestiontext + "&select_A=" + select_A + "&select_B=" + select_B + "&select_C=" + select_C + "&select_D=" + select_D;
+    axios.get(newUrl)
+      .then((response) => {
+        const telePhoneData = response.data;
+        setTelephoneData(telePhoneData);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching GPT API:', error);
+      });
   }
 
   const handleTelephoneClose = () => {
@@ -215,7 +237,7 @@ function App() {
 
             {/* ボタンを押したときに表示されるポップアップ画面 デザインは最低限 */}
             <PopUpScreenAudience open={audienceOpen} handleClose={handleAudienceClose} text="Audience"/>
-            <PopUpScreen open={telephoneOpen} handleClose={handleTelephoneClose} text="Telephone"/>
+            <PopUpScreen open={telephoneOpen} handleClose={handleTelephoneClose} text="Telephone" mainText={telephoneData} loading={loading}/>
 
             {/* 問題と解答のパネル */}
             <div className="bottom">
