@@ -34,11 +34,11 @@
             },
             {
                 "text": "大和川",
-                "correct": false
+                "correct": true
             },
             {
                 "text": "大川",
-                "correct": true
+                "correct": false
             },
             {
                 "text": "天王寺川",
