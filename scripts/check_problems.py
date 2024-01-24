@@ -90,7 +90,7 @@ def check_id_uniqueness(problems):
     
     return len(id_set) == len(problems)
 
-with open('./src/assets/problems/problems.json') as f:
+with open('./backend/problems/problems.json') as f:
     problems = json.load(f)
 
 for problem in problems:
